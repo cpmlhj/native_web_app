@@ -1,0 +1,59 @@
+
+.bottom-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: px2rem(50);
+      display: flex;
+      border-top: 1px solid #b6b6b6;
+      background-color: rgba(246, 246, 246, 0.95);
+
+      .btn-item {
+            flex: 1;
+            font-size: px2rem(11);
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            .tab-icon {
+                  margin-bottom: px2rem(4);
+                  width: px2rem(25);
+                  height: px2rem(25);
+                  background-size: cover;
+            }
+            &.action {
+                  color: #000
+            }
+            &.my {
+                  .tab-icon {
+                        background-image: url('./img/myIcon.png');
+                  }
+            }
+            &.home {
+                  .tab-icon {
+                        background-image: url('./img/homeIcon.png');
+                  }
+            }
+            &.order {
+                  .tab-icon {
+                        background-image: url('./img/orderIcon.png');
+                  }
+            }
+            &.my.action {
+                  .tab-icon {
+                        background-image: url('./img/myIconActive.png');
+                  }
+            }
+            &.home.action {
+                  .tab-icon {
+                        background-image: url('./img/homeIconActive.png');
+                  }
+            }
+            &.order.action {
+                  .tab-icon {
+                        background-image: url('./img/orderIconActive.png');
+                  }
+            }
+      }
+}

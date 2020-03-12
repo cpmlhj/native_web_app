@@ -1,9 +1,9 @@
-import { ADD_TODO } from './actionTypes'
+import { CHANGE_TAB } from './actionTypes'
 
 
-export const addTodo = (obj) => {
+export const changeTab = (type) => {
       return {
-            type: ADD_TODO,
-            payload: obj
+            type: CHANGE_TAB,
+            payload: type
       }
 }

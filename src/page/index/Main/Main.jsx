@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import BottomBar from '../BottomBar/BottomBar.jsx'
 
 class IndexMain extends React.Component {
       constructor(props) {
@@ -8,7 +8,9 @@ class IndexMain extends React.Component {
       }
       render() {
             return (
-                  <div></div>
+                  <div>
+                        <BottomBar />
+                  </div>
             )
       }
 }

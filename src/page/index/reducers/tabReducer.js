@@ -1,12 +1,35 @@
-import { ADD_TODO } from '../actions/actionTypes'
+import { CHANGE_TAB } from '../actions/actionTypes'
+import { TABKEY } from '../config'
+const initState = {
+      tabs: [
+            {
+                  name: '首页',
+                  key: TABKEY.home
+            },
+            {
+                  name: '订单',
+                  key: TABKEY.order
+            },
+            {
+                  name: '我的',
+                  key: TABKEY.my
+            }
+      ],
+      activeKey: TABKEY.home
+}
 export default {
-      num: (state = 0, action) => {
-            switch(action.type) {
-                  case ADD_TODO:
-                        const n = state
-                        return n + action.obj.num
+      tabs: (state = initState.tabs, action) => {
+            switch (action.type) {
                   default:
-                        return state      
+                        return state
+            }
+      },
+      activeKey: (state = initState.activeKey, action) => {
+            switch (action.type) {
+                  case CHANGE_TAB:
+                        return action.payload
+                  default:
+                        return state
             }
       }
 }
