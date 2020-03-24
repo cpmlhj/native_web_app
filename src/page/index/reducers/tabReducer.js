@@ -1,4 +1,4 @@
-import { CHANGE_TAB } from '../actions/actionTypes'
+import { CHANGE_TAB, HEADER_DATA, CONTENT_LIST } from '../actions/actionTypes'
 import { TABKEY } from '../config'
 const initState = {
       tabs: [
@@ -15,7 +15,9 @@ const initState = {
                   key: TABKEY.my
             }
       ],
-      activeKey: TABKEY.home
+      activeKey: TABKEY.home,
+      categoryData: [],
+      contentList: []
 }
 export default {
       tabs: (state = initState.tabs, action) => {
@@ -28,6 +30,28 @@ export default {
             switch (action.type) {
                   case CHANGE_TAB:
                         return action.payload
+                  default:
+                        return state
+            }
+      },
+      categoryData: (state = initState.categoryData, action) => {
+            switch (action.type) {
+                  case HEADER_DATA:
+                        return action.payload.data.primary_filter
+                  default:
+                        return state
+            }
+      },
+      contentList: (state = initState.contentList, action) => {
+            switch (action.type) {
+                  case CONTENT_LIST:
+                        if (action.currentPage === 0) {
+                              return action.payload.data.poilist
+                        } else {
+                              let list = state.contentList;
+                              list.concat(action.payload.data.poilist)
+                              return list
+                        }
                   default:
                         return state
             }

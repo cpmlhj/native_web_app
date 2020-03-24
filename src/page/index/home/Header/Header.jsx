@@ -1,16 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import BottomBar from '../BottomBar/BottomBar.jsx'
-import Home from '../home/Home'
-class IndexMain extends React.Component {
+import SearchBar from '../SearchBar/SearchBar'
+import './Header.scss'
+/**
+ * @constructor <HomeHeader/>
+ * @description 首页
+ */
+
+class HomeHeader extends React.Component {
       constructor(props) {
             super(props)
       }
       render() {
             return (
-                  <div>
-                        <Home />
-                        <BottomBar />
+                  <div className='home-header'>
+                        <SearchBar />
                   </div>
             )
       }
@@ -27,4 +31,5 @@ const dispatchToProps = (dispatch) => {
       }
 }
 
-export default connect(stateToProps, dispatchToProps)(IndexMain)
+
+export default connect(stateToProps, dispatchToProps)(HomeHeader)

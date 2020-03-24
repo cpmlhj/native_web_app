@@ -1,0 +1,117 @@
+.item-content {
+      display: flex;
+      position: relative;
+      padding-bottom: px2rem(15);
+      padding-top: px2rem(15);
+      margin-left: px2rem(10);
+      margin-right: px2rem(10);
+      color: #656565;
+
+      &::after {
+            background-color: #e4e4e4;
+      }
+
+      .brand {
+            position: absolute;
+            left: px2rem(1);
+            top: px2rem(16);
+            font-size: px2rem(12);
+            padding: px2rem(2);
+            color: #fff;
+            background-color: #ffa627;
+      }
+
+      .brand-pin {
+            background-color: #ffa627;
+      }
+
+      .brand-xin {
+            background-color: #21c56c;
+      }
+
+      .item-img {
+            width: px2rem(86);
+            height: px2rem(65);
+            border: 1px solid #e4e4e4;
+      }
+
+      .item-info-content {
+            flex: 1;
+            margin-left: px2rem(7);
+      }
+
+      .item-title {
+            font-size: px2rem(16);
+            color: #333;
+            font-weight: 500;
+            margin-top: px2rem(3);
+      }
+
+      .item-desc {
+            margin-top: px2rem(13);
+            font-size: px2rem(12);
+            display: flex;
+            justify-content: space-around;
+
+      }
+
+      .star {
+            width: px2rem(10);
+            height: px2rem(10);
+            float: left;
+            background-size: cover;
+      }
+
+      .fullstar {
+            background-image: url('../../../../../assets/img/fullstar.png');
+      }
+
+      .halfstar {
+            background-image: url('../../../../../assets/img/halfstar.png');
+      }
+
+      .nullstar {
+            background-image: url('../../../../../assets/img/gray-star.png');
+      }
+
+      .item-price {
+            margin-top: px2rem(10);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 px2rem(8);
+            font-size: px2rem(12);
+            height: px2rem(24);
+      }
+
+      .item-meituan-flag {
+            background-color: #ffd161;
+            color: #000;
+            padding: px2rem(3);
+            border-radius: px2rem(3);
+      }
+
+      .other-info {
+            color: #898989;
+            margin-top: px2rem(7);
+            font-size: px2rem(12);
+      }
+
+      .other-tag {
+            width: px2rem(14);
+            height: px2rem(14);
+            display: inline-block;
+      }
+
+      .other-content {
+            display: inline-block;
+            vertical-align: px2rem(3);
+            margin-left: px2rem(3);
+            height: px2rem(14);
+            width: px2rem(230);
+      }
+
+      .item-distance {
+            display: flex;
+      }
+}

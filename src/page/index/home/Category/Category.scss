@@ -1,0 +1,21 @@
+.category {
+      padding-bottom: px2rem(10);
+      .category-item {
+            float: left;
+            width: 20%;
+            padding-top: px2rem(14);
+            font-size: px2rem(13);
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+      }
+
+      .item-icon {
+            width: px2rem(37);
+      }
+
+      .item-name {
+            margin-top: px2rem(14);
+      }
+}

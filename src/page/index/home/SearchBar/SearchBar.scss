@@ -1,0 +1,85 @@
+.search-bar {
+      width: 100%;
+      height: px2rem(50);
+      display: flex;
+      box-sizing: border-box;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #1c1b20;
+      padding: 0 px2rem(10);
+
+      .bar-location {
+            margin-right: px2rem(20);
+            border-radius: px2rem(13);
+            height: px2rem(28);
+            width: px2rem(92);
+      }
+
+      .location-icon {
+            display: inline-block;
+            width: px2rem(15);
+            height: px2rem(20);
+            vertical-align: px2rem(8);
+            margin-left: px2rem(8);
+            background-image: url('../../../../assets/img/locationicon.png');
+            background-size: cover;
+      }
+
+      .location-bar {
+            display: inline-block;
+            width: px2rem(15);
+            height: px2rem(20);
+            vertical-align: px2rem(8);
+            margin-left: px2rem(8);
+      }
+
+      .location-text {
+            font-size: px2rem(14);
+            display: inline-block;
+            color: #fff;
+            vertical-align: px2rem(12);
+            margin-left: px2rem(8);
+            margin-right: px2rem(19);
+            position: relative;
+
+            &:after {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  width: px2rem(14);
+                  height: px2rem(14);
+                  color: #000;
+                  background-image: url('../../../../assets/img/allowicon.png');
+                  background-size: cover;
+                  right: px2rem(-15);
+                  top: px2rem(-1);
+            }
+      }
+
+      .search-btn {
+            width: px2rem(230);
+            height: px2rem(30);
+            background-color: #ebebe4;
+            border-radius: px2rem(20);
+            line-height: px2rem(30);
+            position: relative;
+
+            &:before {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  width: px2rem(14);
+                  height: px2rem(14);
+                  background-image: url('../../../../assets/img/searchIcon.png');
+                  background-size: cover;
+                  left: px2rem(10);
+                  top: px2rem(7);
+            }
+      }
+
+      .place-holder {
+            color: rgb(84, 84, 84);
+            margin-left: px2rem(30);
+            font-size: px2rem(14);
+      }
+}

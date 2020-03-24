@@ -39,7 +39,6 @@ class BottomBar extends React.Component {
 }
 
 const stateToProps = (state) => {
-      console.log(state)
       return {
             state
       }

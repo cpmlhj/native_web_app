@@ -1,6 +1,7 @@
 
 const path = require('path')
 const fs = require('fs')
+const webpack = require('webpack')
 const htmlPlugin = require('html-webpack-plugin')
 const srcRoot = path.resolve(__dirname, './src')
 const devPath = path.resolve(__dirname, 'dev')
@@ -22,9 +23,7 @@ function gethtmlArray(entryMap) {
       let htmlArray = [];
       Object.keys(entryMap).forEach(k => {
             let fullname = path.resolve(pageDir, k)
-            console.log(fullname)
             let filename = path.resolve(fullname, k + '.html')
-            console.log(filename)
             if (fs.existsSync(filename)) {
                   htmlArray.push(new htmlPlugin({
                         filename: k + '.html',
@@ -43,10 +42,14 @@ module.exports = {
       entry: entryMap,
       mode: 'development',
       devServer: {
-            contentBase: devPath
+            contentBase: devPath,
+            hot: true
       },
       resolve: {
-            extensions: ['.js', '.jsx']
+            extensions: ['.js', '.jsx'],
+            alias: {
+                  '@img': path.resolve(__dirname, "src/assets/img")
+            }
       },
       output: {
             path: devPath,
@@ -79,6 +82,9 @@ module.exports = {
                         use: [
                               {
                                     loader: 'babel-loader'
+                              },
+                              {
+                                    loader: 'eslint-loader'
                               }
                         ],
                         include: srcRoot
@@ -86,6 +92,7 @@ module.exports = {
             ]
       },
       plugins: [
-
+           new webpack.NamedChunksPlugin(),
+           new webpack.HotModuleReplacementPlugin()
       ].concat(htmlArray)
 }
